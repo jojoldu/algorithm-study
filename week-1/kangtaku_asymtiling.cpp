@@ -15,10 +15,9 @@ int main()
 		tiling[i] = (tiling[i - 1] + tiling[i - 2]) % MOD;
 	}
 
-	ifstream in("input.txt");
-	in >> cases;
+	cin >> cases;
 	while (cases--) {
-		in >> n;
+		cin >> n;
 		result = (tiling[n] + MOD*2 - ((n % 2 == 0) ? tiling[(n - 2) / 2] + tiling[n / 2] : tiling[(n - 1) / 2])) % MOD;
 		cout << result << endl;
 	}
